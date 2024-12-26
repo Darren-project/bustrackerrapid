@@ -1,0 +1,5 @@
+gtfs_data.zip
+transit_map.html
+gtfs_data/
+.vscode/
+__pycache__/
