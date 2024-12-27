@@ -62,7 +62,7 @@ for shape_id, shape_points in shape_groups:
         opacity=0.8,
     ).add_to(transit_map)
 
-rt = Realtime("https://rapidbustracker.darrenmc.dev",
+rt = Realtime("https://rapidbustrackerapi.darrenmc.dev",
               point_to_layer=JsCode("function(feature, latlng) { return L.marker(latlng).bindTooltip('<div>' + feature.properties.tooltip + '</div>').setIcon(L.AwesomeMarkers.icon({'markerColor': 'blue','iconColor': 'white','icon': 'bus','prefix': 'fa','extraClasses': 'fa-rotate-0'})); }"),
               interval=10000)
 
