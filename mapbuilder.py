@@ -127,9 +127,9 @@ transportinfo.agency = {{}}
 
 let fetchloggroup = _loghelper_internal.console_group_logs("group", undefined, "Fetching live data from server")
 
-function sleep(ms) {
+function sleep(ms) {{
   return new Promise(resolve => setTimeout(resolve, ms))
-}
+}}
 
 
 Promise.all(
