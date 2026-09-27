@@ -46,7 +46,8 @@ transit_map = folium.Map(tiles="https://mt0.google.com/vt/lyrs=y&x={x}&y={y}&z={
                          on behalf of <a href='{agency_info["agency_url"]}'> {agency_info["agency_name"]} <img src='{agency_info["agency_url"]}/favicon.ico' style='height: 45px; width: 45px;'></img></a>
                          """,
                          location=map_center,
-                         zoom_start=13)
+                         zoom_start=13,
+                         prefer_canvas=True)
 
 maps_stop_route = tracker.get_stop_served_routes()
 
@@ -401,4 +402,4 @@ buses_search.add_to(transit_map)
 LocateControl().add_to(transit_map)
 
 print("Saving map...")
-transit_map.save("transit_map.html")
+transit_map.save("index.html")
