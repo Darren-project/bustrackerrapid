@@ -126,6 +126,10 @@ transportinfo.agency = {{}}
 
 let fetchloggroup = _loghelper_internal.console_group_logs("group", undefined, "Fetching live data from server")
 
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms))
+}
+
 
 Promise.all(
     Object.keys(transportinfo).map(async endpoint => {{
@@ -345,10 +349,11 @@ function(feature, old) {{
     for(let set in routeSection) {{
         moves.push({{"duration": eachSetDuration, "move": routeSection[set]}})
     }}
-    setTimeout(() => {{
+    setTimeout(async () => {{
         for(let move in moves) {{
             let actMove = moves[move]
             old.moveTo(actMove.move, actMove.duration)
+            await sleep(actMove.duration)
         }}
     }}, 1)
    //console.log(duration)
