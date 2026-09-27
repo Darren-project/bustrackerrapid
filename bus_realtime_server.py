@@ -80,4 +80,4 @@ def agency():
     return tracker.get_agency()
 
 if __name__ == "__main__":
-  app.run(port=5440)
+  app.run(port=5440, host="0.0.0.0")
