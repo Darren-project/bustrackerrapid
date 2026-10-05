@@ -3,9 +3,13 @@ import time
 
 from flask import Flask
 from flask_cors import CORS, cross_origin
+from werkzeug.middleware.proxy_fix import ProxyFix
+
 
 app = Flask(__name__)
 cors = CORS(app)
+
+app.wsgi_app = ProxyFix(app.wsgi_app, x_for=1)
 
 last_bus_time = None
 last_bus_data = {}
